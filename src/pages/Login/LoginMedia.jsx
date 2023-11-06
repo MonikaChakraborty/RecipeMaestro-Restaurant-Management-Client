@@ -1,11 +1,11 @@
 import { FcGoogle } from "react-icons/fc";
-// import { BsGithub } from "react-icons/bs";
+import { BsGithub } from "react-icons/bs";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const LoginMedia = () => {
 
-    const {user, googleLogin} = useContext(AuthContext);
+    const {user, googleLogin, githubLogin} = useContext(AuthContext);
     console.log(user);
 
     const handleLoginMedia = (media) => {
@@ -24,18 +24,13 @@ const LoginMedia = () => {
         
 
         <button onClick={() => handleLoginMedia (googleLogin)}
-         
           className="btn normal-case"
         >
           <FcGoogle></FcGoogle>Google
         </button>
 
-        {/* <button
-         
-          className="btn normal-case"
-        >
-          <BsGithub></BsGithub>GitHub
-        </button> */}
+        <button onClick={() => handleLoginMedia(githubLogin)}  className="btn normal-case"><BsGithub></BsGithub>GitHub</button>
+
       </div>
     </div>
   );

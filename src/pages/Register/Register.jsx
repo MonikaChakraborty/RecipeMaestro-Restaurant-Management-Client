@@ -1,14 +1,15 @@
 import Navbar from "../Shared/Navbar";
 import login from "../../assets/login.jpg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
 
 const Register = () => {
 
-    const {createUser} = useAuth();
+    const {createUser, handleUpdateProfile} = useAuth();
+    const navigate = useNavigate();
 
-    const handleSubmit = event => {
+    const handleSubmit = async(event) => {
         event.preventDefault();
 
         // getting the field values
@@ -19,16 +20,37 @@ const Register = () => {
 
         // console.log(name, email, password);
 
-        // validation
-        if(password.length < 6){
-            toast.error('password is less than 6 characters');
-            return;
-        }
-
-        // creating a new user
-        createUser(email, password)
-        .then(res => console.log(res.user))
-        .catch(error=> console.log(error))
+        try {
+            // Validation
+            if (password.length < 6) {
+              throw new Error("The password is less than 6 characters");
+            } else if (!/[A-Z]/.test(password)) {
+              throw new Error("The password does not have a capital letter");
+            } else if (!/[!@#$%^&*]/.test(password)) {
+              throw new Error("The password does not have a special character");
+            }
+  
+  
+      
+            // Create a new user
+            const userCredential = await createUser(email, password);
+      
+  
+  
+            // Update user profile
+            await handleUpdateProfile(name, photo);
+            toast.success("Registration Successful");
+  
+  
+            // navigate user after register
+            navigate("/");
+  
+          } catch (error) {
+            // Display error toast
+            toast.error(error.message);
+            event.target.reset();
+          }
+  
          
     }
   return (
