@@ -1,0 +1,111 @@
+[
+  {
+    "foodName": "Spaghetti Bolognese",
+    "foodImage": "https://i.ibb.co/H4HfyVD/spaghetti.jpg",
+    "foodCategory": "Pasta",
+    "price": 12.99,
+    "quantity": 20,
+    "foodOrigin": "Italy",
+    "description": "Classic Italian dish with al dente spaghetti, savory beef and pork Bolognese sauce, garnished with Parmesan cheese."
+  },
+  {
+    "foodName": "Chicken Tikka Masala",
+    "foodImage": "https://i.ibb.co/g9vyssx/tikka.jpg",
+    "foodCategory": "Curry",
+    "price": 14.99,
+    "quantity": 15,
+    "foodOrigin": "India",
+    "description": "Tender chicken pieces marinated in yogurt and spices, grilled to perfection, and served in a rich and creamy tomato-based curry sauce."
+  },
+  {
+    "foodName": "Sushi Platter",
+    "foodImage": "https://i.ibb.co/hXDPKrD/sushi.jpg",
+    "foodCategory": "Sushi",
+    "price": 18.99,
+    "quantity": 25,
+    "foodOrigin": "Japan",
+    "description": "Assorted sushi rolls featuring fresh fish, avocado, and rice, served with soy sauce, wasabi, and pickled ginger."
+  },
+  {
+    "foodName": "Shrimp Fried Rice",
+    "foodImage": "https://i.ibb.co/Xz5gVnL/shrimp-fried-rice.jpg",
+    "foodCategory": "Rice",
+    "price": 11.99,
+    "quantity": 18,
+    "foodOrigin": "Various",
+    "description": "Delicious chicken fried rice with a perfect blend of tender shrimp, vegetables, and aromatic jasmine rice, stir-fried to perfection."
+  },
+  {
+    "foodName": "Caprese Salad",
+    "foodImage": "https://i.ibb.co/9HvdgTr/caprese.jpg",
+    "foodCategory": "Salad",
+    "price": 9.99,
+    "quantity": 18,
+    "foodOrigin": "Italy",
+    "description": "A refreshing salad with ripe tomatoes, fresh mozzarella cheese, basil leaves, drizzled with balsamic glaze and olive oil."
+  },
+  {
+    "foodName": "Chicken Tacos",
+    "foodImage": "https://i.ibb.co/x1S2BS9/tacos.jpg",
+    "foodCategory": "Tacos",
+    "price": 10.99,
+    "quantity": 30,
+    "foodOrigin": "Mexico",
+    "description": "Authentic Mexican street-style tacos with seasoned chicken, topped with onions, cilantro, and salsa, served in soft corn tortillas."
+  },
+  {
+    "foodName": "Margherita Pizza",
+    "foodImage": "https://i.ibb.co/3hDmLWJ/pizza1.jpg",
+    "foodCategory": "Pizza",
+    "price": 11.99,
+    "quantity": 22,
+    "madeBy": "Chef Antonio",
+    "foodOrigin": "Italy",
+    "description": "Classic Margherita pizza with tomato sauce, fresh mozzarella, basil, and a drizzle of olive oil."
+  },
+  {
+    "foodName": "Shrimp Scampi",
+    "foodImage": "https://i.ibb.co/3m8spJp/shrimp.jpg",
+    "foodCategory": "Seafood",
+    "price": 16.99,
+    "quantity": 14,
+    "foodOrigin": "Italy",
+    "description": "Garlic-infused shrimp sautéed in white wine and butter, served over linguine pasta."
+  },
+  {
+    "foodName": "Vegetarian Buddha Bowl",
+    "foodImage": "https://i.ibb.co/3sWdZHp/bowl.jpg",
+    "foodCategory": "Vegetarian",
+    "price": 13.99,
+    "quantity": 20,
+    "foodOrigin": "Various",
+    "description": "A colorful bowl with quinoa, roasted vegetables, avocado, and a tahini dressing."
+  },
+  {
+    "foodName": "BBQ Pulled Pork Sandwich",
+    "foodImage": "https://i.ibb.co/TWzzz2D/pork-sandwich2.jpg",
+    "foodCategory": "Sandwich",
+    "price": 9.99,
+    "quantity": 18,
+    "foodOrigin": "United States",
+    "description": "Slow-cooked pulled pork smothered in barbecue sauce, served in a soft bun with coleslaw."
+  },
+  {
+    "foodName": "Chocolate Fondue",
+    "foodImage": "https://i.ibb.co/j3Tqbbh/Chocolate-Fondue1.jpg",
+    "foodCategory": "Dessert",
+    "price": 8.99,
+    "quantity": 25,
+    "foodOrigin": "Switzerland",
+    "description": "A decadent dessert with melted chocolate for dipping fruits, marshmallows, and cookies."
+  },
+  {
+    "foodName": "Mango Sticky Rice",
+    "foodImage": "https://i.ibb.co/djm1y6q/Mango-Sticky-Rice.jpg",
+    "foodCategory": "Dessert",
+    "price": 7.99,
+    "quantity": 28,
+    "foodOrigin": "Thailand",
+    "description": "Sweet sticky rice topped with ripe mango slices and drizzled with coconut milk."
+  }
+]
