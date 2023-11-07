@@ -82,7 +82,7 @@ const Login = () => {
                   />
                 </div>
               </form>
-              <p className="my-4 text-center">New here? <Link to="/register">Sign Up Now!</Link></p>
+              <p className="my-4 text-center">New here? <Link className="text-yellow-900 font-bold" to="/register">Sign Up Now!</Link></p>
               <LoginMedia></LoginMedia>
             </div>
           </div>

@@ -18,6 +18,33 @@
     "description": "Tender chicken pieces marinated in yogurt and spices, grilled to perfection, and served in a rich and creamy tomato-based curry sauce."
   },
   {
+    "foodName": "Mushroom Risotto",
+    "foodImage": "https://i.ibb.co/W2j6VcG/38463.jpg",
+    "foodCategory": "Risotto",
+    "price": 14.99,
+    "quantity": 18,
+    "foodOrigin": "Italy",
+    "description": "Creamy risotto cooked to perfection with flavorful mushrooms and Parmesan cheese."
+  },
+  {
+    "foodName": "Grilled Vegetable Quesadilla",
+    "foodImage": "https://i.ibb.co/26HjzDv/quesadilla.jpg",
+    "foodCategory": "Appetizer",
+    "price": 7.99,
+    "quantity": 30,
+    "foodOrigin": "Mexico",
+    "description": "A delightful quesadilla filled with grilled vegetables, melted cheese, and served with salsa and guacamole."
+  },
+  {
+    "foodName": "Caesar Salad",
+    "foodImage": "https://i.ibb.co/52Qpsvs/26004.jpg",
+    "foodCategory": "Salad",
+    "price": 9.99,
+    "quantity": 22,
+    "foodOrigin": "United States",
+    "description": "Fresh romaine lettuce, croutons, and Parmesan cheese tossed in creamy Caesar dressing."
+  },
+  {
     "foodName": "Sushi Platter",
     "foodImage": "https://i.ibb.co/hXDPKrD/sushi.jpg",
     "foodCategory": "Sushi",
@@ -25,6 +52,15 @@
     "quantity": 25,
     "foodOrigin": "Japan",
     "description": "Assorted sushi rolls featuring fresh fish, avocado, and rice, served with soy sauce, wasabi, and pickled ginger."
+  },
+  {
+    "foodName": "Crispy Chicken Burger",
+    "foodImage": "https://i.ibb.co/ByWTbTX/15976.jpg",
+    "foodCategory": "Burger",
+    "price": 11.99,
+    "quantity": 24,
+    "foodOrigin": "United States",
+    "description": "Juicy and crispy chicken patty topped with fresh lettuce, tomatoes, and mayo in a soft burger bun."
   },
   {
     "foodName": "Shrimp Fried Rice",
@@ -45,6 +81,33 @@
     "description": "A refreshing salad with ripe tomatoes, fresh mozzarella cheese, basil leaves, drizzled with balsamic glaze and olive oil."
   },
   {
+    "foodName": "Chicken Alfredo Pasta",
+    "foodImage": "https://i.ibb.co/JqHLt20/alfredo.jpg",
+    "foodCategory": "Pasta",
+    "price": 15.99,
+    "quantity": 18,
+    "foodOrigin": "Italy",
+    "description": "Creamy Alfredo sauce with grilled chicken served over perfectly cooked fettuccine pasta."
+  },
+  {
+    "foodName": "Pepperoni Pizza",
+    "foodImage": "https://i.ibb.co/FXHwq9j/pepperoni-pizza.jpg",
+    "foodCategory": "Pizza",
+    "price": 14.99,
+    "quantity": 15,
+    "foodOrigin": "Italy",
+    "description": "Classic pepperoni pizza with tomato sauce, mozzarella cheese, and generous slices of pepperoni."
+  },
+  {
+    "foodName": "Chicken Fried Rice",
+    "foodImage": "https://i.ibb.co/kK3X9KM/Chicken-Fried-Rice-wide-FS.jpg",
+    "foodCategory": "Rice",
+    "price": 11.99,
+    "quantity": 18,
+    "foodOrigin": "Various",
+    "description": "Delicious chicken fried rice with a perfect blend of tender chicken, vegetables, and aromatic jasmine rice, stir-fried to perfection."
+  },
+  {
     "foodName": "Chicken Tacos",
     "foodImage": "https://i.ibb.co/x1S2BS9/tacos.jpg",
     "foodCategory": "Tacos",
@@ -59,7 +122,6 @@
     "foodCategory": "Pizza",
     "price": 11.99,
     "quantity": 22,
-    "madeBy": "Chef Antonio",
     "foodOrigin": "Italy",
     "description": "Classic Margherita pizza with tomato sauce, fresh mozzarella, basil, and a drizzle of olive oil."
   },
@@ -71,6 +133,15 @@
     "quantity": 14,
     "foodOrigin": "Italy",
     "description": "Garlic-infused shrimp sautéed in white wine and butter, served over linguine pasta."
+  },
+  {
+    "foodName": "Classic Tiramisu",
+    "foodImage": "https://i.ibb.co/VDHmw0G/18033.jpg",
+    "foodCategory": "Dessert",
+    "price": 9.99,
+    "quantity": 18,
+    "foodOrigin": "Italy",
+    "description": "A decadent Italian dessert made with layers of coffee-soaked ladyfingers and creamy mascarpone cheese."
   },
   {
     "foodName": "Vegetarian Buddha Bowl",
@@ -89,6 +160,15 @@
     "quantity": 18,
     "foodOrigin": "United States",
     "description": "Slow-cooked pulled pork smothered in barbecue sauce, served in a soft bun with coleslaw."
+  },
+  {
+    "foodName": "Lemon Herb Grilled Salmon",
+    "foodImage": "https://i.ibb.co/KXh0gFp/33220.jpg",
+    "foodCategory": "Seafood",
+    "price": 16.99,
+    "quantity": 15,
+    "foodOrigin": "North America",
+    "description": "Salmon fillets marinated in a zesty lemon herb sauce and grilled to perfection."
   },
   {
     "foodName": "Chocolate Fondue",

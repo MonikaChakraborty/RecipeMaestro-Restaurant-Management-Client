@@ -5,54 +5,45 @@ import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
 
 const Register = () => {
+  const { createUser, handleUpdateProfile } = useAuth();
+  const navigate = useNavigate();
 
-    const {createUser, handleUpdateProfile} = useAuth();
-    const navigate = useNavigate();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
-    const handleSubmit = async(event) => {
-        event.preventDefault();
+    // getting the field values
+    const name = event.target.name.value;
+    const email = event.target.email.value;
+    const photo = event.target.photo.value;
+    const password = event.target.password.value;
 
-        // getting the field values
-        const name = event.target.name.value;
-        const email = event.target.email.value;
-        const photo = event.target.photo.value;
-        const password = event.target.password.value;
+    // console.log(name, email, password);
 
-        // console.log(name, email, password);
+    try {
+      // Validation
+      if (password.length < 6) {
+        throw new Error("The password is less than 6 characters");
+      } else if (!/[A-Z]/.test(password)) {
+        throw new Error("The password does not have a capital letter");
+      } else if (!/[!@#$%^&*]/.test(password)) {
+        throw new Error("The password does not have a special character");
+      }
 
-        try {
-            // Validation
-            if (password.length < 6) {
-              throw new Error("The password is less than 6 characters");
-            } else if (!/[A-Z]/.test(password)) {
-              throw new Error("The password does not have a capital letter");
-            } else if (!/[!@#$%^&*]/.test(password)) {
-              throw new Error("The password does not have a special character");
-            }
-  
-  
-      
-            // Create a new user
-            const userCredential = await createUser(email, password);
-      
-  
-  
-            // Update user profile
-            await handleUpdateProfile(name, photo);
-            toast.success("Registration Successful");
-  
-  
-            // navigate user after register
-            navigate("/");
-  
-          } catch (error) {
-            // Display error toast
-            toast.error(error.message);
-            event.target.reset();
-          }
-  
-         
+      // Create a new user
+      const userCredential = await createUser(email, password);
+
+      // Update user profile
+      await handleUpdateProfile(name, photo);
+      toast.success("Registration Successful");
+
+      // navigate user after register
+      navigate("/");
+    } catch (error) {
+      // Display error toast
+      toast.error(error.message);
+      event.target.reset();
     }
+  };
   return (
     <div>
       <Navbar></Navbar>
@@ -65,8 +56,7 @@ const Register = () => {
             <div className="card-body">
               <h1 className="text-3xl font-bold text-center">Register now!</h1>
               <form onSubmit={handleSubmit}>
-
-              <div className="form-control">
+                <div className="form-control">
                   <label className="label">
                     <span className="label-text">Name</span>
                   </label>
@@ -104,7 +94,6 @@ const Register = () => {
                     required
                   />
                 </div>
-            
 
                 <div className="form-control">
                   <label className="label">
@@ -132,7 +121,7 @@ const Register = () => {
                 </div>
               </form>
               <p className="my-4 text-center">
-                Already Have an account? <Link to="/login">Login Now!</Link>
+                Already Have an account? <Link className="text-yellow-900 font-bold" to="/login">Login Now!</Link>
               </p>
             </div>
           </div>
@@ -141,5 +130,6 @@ const Register = () => {
     </div>
   );
 };
+
 
 export default Register;

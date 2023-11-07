@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
 
 const FoodItemCard = ({ foodItem }) => {
-  const { foodName, foodImage, foodCategory, price, quantity } = foodItem;
+  const { _id, foodName, foodImage, foodCategory, price, quantity } = foodItem;
+
 
   return (
-    <div className="card bg-white shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300 mb-24">
+    <div className="card bg-white shadow-md hover:shadow-lg transform hover:scale-105 transition ">
       <figure className="overflow-hidden">
         <img
           src={foodImage}
@@ -17,7 +19,9 @@ const FoodItemCard = ({ foodItem }) => {
         <p className="text-gray-700 font-medium">Price: ${price}</p>
         <p className="text-gray-700 font-medium">Quantity: {quantity}</p>
         <div className="card-actions mt-4 flex justify-end">
-          <button className="btn bg-yellow-900 text-gray-200">Details</button>
+          <Link to={`/details/${_id}`}>
+          <button className="btn bg-yellow-900 text-gray-200 hover:bg-yellow-950">Details</button>
+          </Link>
         </div>
       </div>
     </div>

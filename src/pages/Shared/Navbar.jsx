@@ -83,7 +83,7 @@ const Navbar = () => {
         </div>
         <img className="w-16 -mr-4 object-cover" src={logo} alt="logo" />
         <a className="btn btn-ghost normal-case text-gray-200 text-xl">
-          Recipe Maestro
+          RecipeMaestro
         </a>
       </div>
       <div className="navbar-center hidden lg:flex">
