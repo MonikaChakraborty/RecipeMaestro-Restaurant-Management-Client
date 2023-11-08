@@ -9,7 +9,7 @@ const PrivateRoute = ({children}) => {
     // console.log(location.pathname);
     
     if(loading) {
-        return <span className="w-[200px] loading loading-spinner text-neutral"></span>
+        return <div className="flex justify-center  "><span className="mt-48 w-[200px] loading loading-spinner text-neutral"></span></div>
 
     }
 
@@ -20,6 +20,7 @@ const PrivateRoute = ({children}) => {
 
     return <Navigate state={location.pathname} to="/login"></Navigate>;
 };
+
 
 
 

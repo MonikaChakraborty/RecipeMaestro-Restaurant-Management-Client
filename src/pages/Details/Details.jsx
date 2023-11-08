@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Navbar from "../Shared/Navbar";
 import { useState } from "react";
 import Modal from "react-modal";
@@ -6,6 +6,7 @@ import { FaTimes } from "react-icons/fa";
 
 const Details = ({ foodItem }) => {
   const details = useLoaderData();
+  // const { _id, foodName, foodImage, foodCategory, price, quantity } = foodItem;
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -61,7 +62,7 @@ const Details = ({ foodItem }) => {
                   Category: {details.foodCategory}
                 </p>
                 <p className="text-xl font-bold mb-2 text-yellow-800">
-                  ${details.price.toFixed(2)}
+                  ${details.price}
                 </p>
                 <p className="mb-4 text-gray-700">Made by: {details.madeBy}</p>
                 <p className="text-gray-600 mb-6">
@@ -69,9 +70,11 @@ const Details = ({ foodItem }) => {
                 </p>
                 <p className="mb-10 text-gray-700">{details.description}</p>
 
+                <Link to={`/foodPurchase/${details._id}`}>
                 <button className="btn bg-yellow-800 text-gray-200 text-lg normal-case transform transition-transform  hover:bg-yellow-950 hover:scale-105">
                   Order Now
                 </button>
+                </Link>
               </div>
             </div>
             <div className="mt-8">
