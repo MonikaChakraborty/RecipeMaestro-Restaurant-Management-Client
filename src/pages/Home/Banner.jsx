@@ -15,11 +15,11 @@ const Banner = () => {
       <div className="absolute inset-0 bg-black opacity-80"></div>
 
       {/* Text */}
-      <div className="absolute inset-0 text-center flex flex-col mt-48 ">
-        <h1 className="text-3xl lg:text-5xl font-bold text-sky-100 mb-5">
+      <div className="absolute inset-0 text-center flex flex-col lg:mt-48 ">
+        <h1 className="text-2xl lg:text-5xl font-bold text-sky-100 lg:mb-5">
           Flavor Meets Mastery at Recipe Maestro
         </h1>
-        <p className="lg:text-lg lg:font-medium text-gray-200 px-3">
+        <p className="lg:text-lg lg:font-medium text-base text-gray-200 lg:px-3">
           Welcome to Recipe Maestro, where every meal is a masterpiece. Immerse
           yourself in a world of culinary excellence, where our chefs blend
           creativity and tradition to create dishes that delight the senses.

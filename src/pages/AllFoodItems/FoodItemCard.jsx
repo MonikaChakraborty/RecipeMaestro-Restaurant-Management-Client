@@ -5,7 +5,7 @@ const FoodItemCard = ({ foodItem }) => {
 
 
   return (
-    <div className="card bg-white shadow-md hover:shadow-lg transform hover:scale-105 transition ">
+    <div className="card bg-white shadow-md hover:shadow-lg transform hover:scale-105 transition">
       <figure className="overflow-hidden">
         <img
           src={foodImage}

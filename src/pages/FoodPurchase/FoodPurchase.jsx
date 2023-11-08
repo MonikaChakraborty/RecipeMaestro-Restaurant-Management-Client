@@ -1,139 +1,73 @@
-// import { useLoaderData } from "react-router-dom";
-// import Navbar from "../Shared/Navbar";
-// import useAuth from "../../hooks/useAuth";
-
-// const FoodPurchase = () => {
-//   const foodItem = useLoaderData();
-//   const { _id, foodName, foodImage, foodCategory, price, quantity } = foodItem;
-//   const {user} = useAuth();
-
-//   const handleConfirmOrder = event => {
-//     event.preventDefault();
-
-//     const form = event.target;
-//   }
-//   return (
-//     <div>
-//       <Navbar></Navbar>
-//       <div className="max-w-screen-xl mx-auto">
-//       <h1>Order {foodName}</h1>
-//         <img src={foodImage} alt="" />
-        
-//         <form onSubmit={handleConfirmOrder}>
-//           <div className="form-control">
-//             <label className="label">
-//               <span className="label-text">Food Name</span>
-//             </label>
-//             <label className="input-group">
-//               <input
-//                 type="text"
-//                 name="foodName"
-//                 defaultValue={foodName}
-//                 placeholder="Food Name"
-//                 id=""
-//               />
-//             </label>
-//           </div>
-
-//           <div className="form-control">
-//             <label className="label">
-//               <span className="label-text">Price</span>
-//             </label>
-//             <label className="input-group">
-//               <input
-//                 type="text"
-//                 name="price"
-//                 defaultValue={price}
-//                 placeholder="Price"
-//                 id=""
-//               />
-//             </label>
-//           </div>
-
-//           <div className="form-control">
-//             <label className="label">
-//               <span className="label-text">Quantity</span>
-//             </label>
-//             <label className="input-group">
-//               <input type="text" name="quantity" placeholder="Quantity" id="" />
-//             </label>
-//           </div>
-
-//           <div className="form-control">
-//             <label className="label">
-//               <span className="label-text">Buyer Name</span>
-//             </label>
-//             <label className="input-group">
-//               <input type="text" name="name" defaultValue={user?.displayName}  placeholder="Buyer Name" id="" />
-//             </label>
-//           </div>
-
-//           <div className="form-control">
-//             <label className="label">
-//               <span className="label-text">Buyer Email</span>
-//             </label>
-//             <label className="input-group">
-//               <input type="email" name="email" defaultValue={user?.email} placeholder="Buyer Email" id="" />
-//             </label>
-//           </div>
-
-//           <div className="form-control">
-//             <input className="btn" type="submit" value="Order Confirm" />
-//           </div>
-//         </form>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default FoodPurchase;
-
-
 import { useLoaderData } from "react-router-dom";
 import Navbar from "../Shared/Navbar";
 import useAuth from "../../hooks/useAuth";
+import Swal from "sweetalert2";
+import { useState } from "react";
 
 const FoodPurchase = () => {
   const foodItem = useLoaderData();
-  const { foodName, quantity, foodImage, price, foodCategory, foodOrigin } = foodItem;
+  const { foodName, quantity, foodImage, price, foodCategory, foodOrigin } =
+    foodItem;
   const { user } = useAuth();
+
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleConfirmOrder = (event) => {
     event.preventDefault();
+    setErrorMessage("");
 
     const form = event.target;
     const name = form.name.value;
     const email = user?.email;
-    const quantity = form.quantity.value;
+    const orderQuantity = parseInt(form.quantity.value);
+
+    // const quantity = form.quantity.value;
     const purchaseDate = new Date();
 
+    // Check if the available quantity is zero
+    if (quantity === 0) {
+      setErrorMessage("This item is not available for purchase.");
+      return;
+    }
+
+    // Check if the order quantity is greater than the available quantity
+    if (orderQuantity > quantity) {
+      setErrorMessage("Cannot order more than available quantity.");
+      return;
+    }
 
     const order = {
-        foodImage: foodImage,
-        foodName: foodName,
-        foodCategory: foodCategory,
-        price: price,
-        foodOrigin: foodOrigin,
-        quantity,
-        userName: name,
-        email,
-        purchaseDate: purchaseDate.toLocaleString(),
-    }
+      foodImage: foodImage,
+      foodName: foodName,
+      foodCategory: foodCategory,
+      price: price,
+      foodOrigin: foodOrigin,
+      quantity: orderQuantity,
+      userName: name,
+      email,
+      purchaseDate: purchaseDate.toLocaleString(),
+    };
     console.log(order);
-    
 
-    
-    fetch('http://localhost:5000/orders', {
-        method: 'POST',
-        headers: {
-            'content-type': 'application/json'
-        },
-        body: JSON.stringify(order)
+    fetch("http://localhost:5000/orders", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(order),
     })
-    .then(res => res.json())
-    .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         console.log(data);
-    })
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Order Successful!",
+            icon: "success",
+            confirmButtonText: "Cool",
+          });
+        }
+      });
   };
 
   return (
@@ -155,7 +89,9 @@ const FoodPurchase = () => {
             <div className="flex flex-col">
               <form onSubmit={handleConfirmOrder} className="space-y-6">
                 <div className="flex items-center mb-4">
-                  <label className="text-gray-600 font-bold text-lg mr-2">Food Name:</label>
+                  <label className="text-gray-600 font-bold text-lg mr-2">
+                    Food Name:
+                  </label>
                   <input
                     type="text"
                     name="foodName"
@@ -166,7 +102,9 @@ const FoodPurchase = () => {
                 </div>
 
                 <div className="flex items-center mb-4">
-                  <label className="text-gray-600 font-bold text-lg mr-2">Price:</label>
+                  <label className="text-gray-600 font-bold text-lg mr-2">
+                    Price:
+                  </label>
                   <input
                     type="text"
                     name="price"
@@ -177,7 +115,9 @@ const FoodPurchase = () => {
                 </div>
 
                 <div className="flex items-center mb-4">
-                  <label className="text-gray-600 font-bold text-lg mr-2">Quantity:</label>
+                  <label className="text-gray-600 font-bold text-lg mr-2">
+                    Quantity:
+                  </label>
                   <input
                     type="number"
                     name="quantity"
@@ -188,7 +128,9 @@ const FoodPurchase = () => {
                 </div>
 
                 <div className="flex items-center mb-4">
-                  <label className="text-gray-600 font-bold text-lg mr-2">Buyer Name:</label>
+                  <label className="text-gray-600 font-bold text-lg mr-2">
+                    Buyer Name:
+                  </label>
                   <input
                     type="text"
                     name="name"
@@ -199,7 +141,9 @@ const FoodPurchase = () => {
                 </div>
 
                 <div className="flex items-center mb-4">
-                  <label className="text-gray-600 font-bold mr-2 text-lg">Buyer Email:</label>
+                  <label className="text-gray-600 font-bold mr-2 text-lg">
+                    Buyer Email:
+                  </label>
                   <input
                     type="email"
                     name="email"
@@ -210,10 +154,15 @@ const FoodPurchase = () => {
                 </div>
 
                 <div className="flex justify-center">
-                  <button className="btn bg-yellow-800 text-gray-200 text-lg normal-case transform transition-transform  hover:bg-yellow-950 hover:scale-105" type="submit">
+                  <button
+                    className="btn bg-yellow-800 text-gray-200 text-lg normal-case transform transition-transform  hover:bg-yellow-950 hover:scale-105"
+                    type="submit"
+                  >
                     Confirm Order
                   </button>
                 </div>
+                {/* Display error message */}
+                {errorMessage && <p className="text-red-500">{errorMessage}</p>}
               </form>
             </div>
           </div>
@@ -224,6 +173,3 @@ const FoodPurchase = () => {
 };
 
 export default FoodPurchase;
-
-
-

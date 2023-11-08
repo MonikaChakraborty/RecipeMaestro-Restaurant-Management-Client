@@ -61,7 +61,7 @@ const Navbar = () => {
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
+              className="h-5 w-5 text-white "
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -76,12 +76,12 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-gray-700 rounded-box w-52"
           >
             {navLinks}
           </ul>
         </div>
-        <img className="w-16 -mr-4 object-cover" src={logo} alt="logo" />
+        <img className="w-16 lg:-mr-4 object-cover" src={logo} alt="logo" />
         <a className="btn btn-ghost normal-case text-gray-200 text-xl">
           RecipeMaestro
         </a>
