@@ -95,7 +95,7 @@ import useAuth from "../../hooks/useAuth";
 
 const FoodPurchase = () => {
   const foodItem = useLoaderData();
-  const { foodName, foodImage, price, foodCategory, foodOrigin } = foodItem;
+  const { foodName, quantity, foodImage, price, foodCategory, foodOrigin } = foodItem;
   const { user } = useAuth();
 
   const handleConfirmOrder = (event) => {
@@ -106,6 +106,8 @@ const FoodPurchase = () => {
     const email = user?.email;
     const quantity = form.quantity.value;
     const purchaseDate = new Date();
+
+
     const order = {
         foodImage: foodImage,
         foodName: foodName,
@@ -119,6 +121,19 @@ const FoodPurchase = () => {
     }
     console.log(order);
     
+
+    
+    fetch('http://localhost:5000/orders', {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(order)
+    })
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+    })
   };
 
   return (

@@ -14,8 +14,8 @@ const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "text-gray-200 bg-yellow-900 text-lg font-medium"
-              : "text-gray-200 text-lg font-medium"
+              ? "text-gray-200 bg-yellow-900 text-lg font-medium hover:text-gray-200"
+              : "text-gray-200 text-lg font-medium hover:text-gray-200"
           }
         >
           Home
@@ -29,8 +29,8 @@ const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "text-gray-200 bg-yellow-900  text-lg font-medium"
-              : "text-gray-200 text-lg font-medium"
+              ? "text-gray-200 bg-yellow-900  text-lg font-medium hover:text-gray-200"
+              : "text-gray-200 text-lg font-medium hover:text-gray-200"
           }
         >
           Add Food Items
@@ -44,8 +44,8 @@ const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "text-gray-200 bg-yellow-900 text-lg font-medium"
-              : "text-gray-200 text-lg font-medium"
+              ? "text-gray-200 bg-yellow-900 text-lg font-medium hover:text-gray-200"
+              : "text-gray-200 text-lg font-medium hover:text-gray-200"
           }
         >
           Blog

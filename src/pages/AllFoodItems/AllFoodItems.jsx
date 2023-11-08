@@ -3,7 +3,7 @@ import Navbar from "../Shared/Navbar";
 import FoodItemCard from "./FoodItemCard";
 import Footer from "../Shared/Footer";
 import { useLoaderData } from "react-router-dom";
-import { data } from "autoprefixer";
+// import { data } from "autoprefixer";
 
 const AllFoodItems = () => {
   const [foodItems, setFoodItems] = useState([]);

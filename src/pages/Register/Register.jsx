@@ -17,6 +17,13 @@ const Register = () => {
     const photo = event.target.photo.value;
     const password = event.target.password.value;
 
+    const user = {
+      name,
+      email,
+      photo,
+      password
+  }
+
     // console.log(name, email, password);
 
     try {
@@ -43,7 +50,22 @@ const Register = () => {
       toast.error(error.message);
       event.target.reset();
     }
+
+    fetch('http://localhost:5000/users', {
+      method: 'POST',
+      headers: {
+          'content-type': 'application/json'
+      },
+      body: JSON.stringify(user)
+  })
+  .then(res => res.json())
+  .then(data => {
+      console.log(data);
+  })
   };
+
+
+
   return (
     <div>
       <Navbar></Navbar>
@@ -114,14 +136,14 @@ const Register = () => {
                 </div>
                 <div className="form-control mt-6">
                   <input
-                    className="btn bg-yellow-900 text-gray-200"
+                    className="btn bg-yellow-900 hover:bg-yellow-950 text-gray-200"
                     type="submit"
                     value="Sign Up"
                   />
                 </div>
               </form>
               <p className="my-4 text-center">
-                Already Have an account? <Link className="text-yellow-900 font-bold" to="/login">Login Now!</Link>
+                Already Have an account? <Link to="/login" className="text-yellow-900 font-bold">Login Now!</Link>
               </p>
             </div>
           </div>
