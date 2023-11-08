@@ -5,6 +5,8 @@
     "foodCategory": "Pasta",
     "price": 12.99,
     "quantity": 20,
+    "count": 0,
+    "madeBy": "preeti1@gmail.com",
     "foodOrigin": "Italy",
     "description": "Classic Italian dish with al dente spaghetti, savory beef and pork Bolognese sauce, garnished with Parmesan cheese."
   },
@@ -14,6 +16,8 @@
     "foodCategory": "Curry",
     "price": 14.99,
     "quantity": 15,
+    "count": 0,
+    "madeBy": "preeti1@gmail.com",
     "foodOrigin": "India",
     "description": "Tender chicken pieces marinated in yogurt and spices, grilled to perfection, and served in a rich and creamy tomato-based curry sauce."
   },
@@ -23,6 +27,8 @@
     "foodCategory": "Risotto",
     "price": 14.99,
     "quantity": 18,
+    "count": 0,
+    "madeBy": "preeti1@gmail.com",
     "foodOrigin": "Italy",
     "description": "Creamy risotto cooked to perfection with flavorful mushrooms and Parmesan cheese."
   },
@@ -32,6 +38,8 @@
     "foodCategory": "Appetizer",
     "price": 7.99,
     "quantity": 30,
+    "count": 0,
+    "madeBy": "preeti1@gmail.com",
     "foodOrigin": "Mexico",
     "description": "A delightful quesadilla filled with grilled vegetables, melted cheese, and served with salsa and guacamole."
   },
@@ -41,6 +49,8 @@
     "foodCategory": "Salad",
     "price": 9.99,
     "quantity": 22,
+    "count": 0,
+    "madeBy": "preeti1@gmail.com",
     "foodOrigin": "United States",
     "description": "Fresh romaine lettuce, croutons, and Parmesan cheese tossed in creamy Caesar dressing."
   },
@@ -50,6 +60,8 @@
     "foodCategory": "Sushi",
     "price": 18.99,
     "quantity": 25,
+    "count": 0,
+    "madeBy": "preeti1@gmail.com",
     "foodOrigin": "Japan",
     "description": "Assorted sushi rolls featuring fresh fish, avocado, and rice, served with soy sauce, wasabi, and pickled ginger."
   },
@@ -59,6 +71,8 @@
     "foodCategory": "Burger",
     "price": 11.99,
     "quantity": 24,
+    "count": 0,
+    "madeBy": "preeti1@gmail.com",
     "foodOrigin": "United States",
     "description": "Juicy and crispy chicken patty topped with fresh lettuce, tomatoes, and mayo in a soft burger bun."
   },
@@ -68,6 +82,8 @@
     "foodCategory": "Rice",
     "price": 11.99,
     "quantity": 18,
+    "count": 0,
+    "madeBy": "preeti1@gmail.com",
     "foodOrigin": "Various",
     "description": "Delicious chicken fried rice with a perfect blend of tender shrimp, vegetables, and aromatic jasmine rice, stir-fried to perfection."
   },
@@ -77,6 +93,8 @@
     "foodCategory": "Salad",
     "price": 9.99,
     "quantity": 18,
+    "count": 0,
+    "madeBy": "preeti1@gmail.com",
     "foodOrigin": "Italy",
     "description": "A refreshing salad with ripe tomatoes, fresh mozzarella cheese, basil leaves, drizzled with balsamic glaze and olive oil."
   },
@@ -86,6 +104,8 @@
     "foodCategory": "Pasta",
     "price": 15.99,
     "quantity": 18,
+    "count": 0,
+    "madeBy": "preeti1@gmail.com",
     "foodOrigin": "Italy",
     "description": "Creamy Alfredo sauce with grilled chicken served over perfectly cooked fettuccine pasta."
   },
@@ -95,6 +115,8 @@
     "foodCategory": "Pizza",
     "price": 14.99,
     "quantity": 15,
+    "count": 0,
+    "madeBy": "preeti1@gmail.com",
     "foodOrigin": "Italy",
     "description": "Classic pepperoni pizza with tomato sauce, mozzarella cheese, and generous slices of pepperoni."
   },
@@ -104,6 +126,8 @@
     "foodCategory": "Rice",
     "price": 11.99,
     "quantity": 18,
+    "count": 0,
+    "madeBy": "preeti1@gmail.com",
     "foodOrigin": "Various",
     "description": "Delicious chicken fried rice with a perfect blend of tender chicken, vegetables, and aromatic jasmine rice, stir-fried to perfection."
   },
@@ -113,6 +137,8 @@
     "foodCategory": "Tacos",
     "price": 10.99,
     "quantity": 30,
+    "count": 0,
+    "madeBy": "preeti1@gmail.com",
     "foodOrigin": "Mexico",
     "description": "Authentic Mexican street-style tacos with seasoned chicken, topped with onions, cilantro, and salsa, served in soft corn tortillas."
   },
@@ -122,6 +148,8 @@
     "foodCategory": "Pizza",
     "price": 11.99,
     "quantity": 22,
+    "count": 0,
+    "madeBy": "preeti1@gmail.com",
     "foodOrigin": "Italy",
     "description": "Classic Margherita pizza with tomato sauce, fresh mozzarella, basil, and a drizzle of olive oil."
   },
@@ -131,6 +159,8 @@
     "foodCategory": "Seafood",
     "price": 16.99,
     "quantity": 14,
+    "count": 0,
+    "madeBy": "preeti1@gmail.com",
     "foodOrigin": "Italy",
     "description": "Garlic-infused shrimp sautéed in white wine and butter, served over linguine pasta."
   },
@@ -140,6 +170,8 @@
     "foodCategory": "Dessert",
     "price": 9.99,
     "quantity": 18,
+    "count": 0,
+    "madeBy": "preeti1@gmail.com",
     "foodOrigin": "Italy",
     "description": "A decadent Italian dessert made with layers of coffee-soaked ladyfingers and creamy mascarpone cheese."
   },
@@ -149,6 +181,8 @@
     "foodCategory": "Vegetarian",
     "price": 13.99,
     "quantity": 20,
+    "count": 0,
+    "madeBy": "preeti1@gmail.com",
     "foodOrigin": "Various",
     "description": "A colorful bowl with quinoa, roasted vegetables, avocado, and a tahini dressing."
   },
@@ -158,6 +192,8 @@
     "foodCategory": "Sandwich",
     "price": 9.99,
     "quantity": 18,
+    "count": 0,
+    "madeBy": "preeti1@gmail.com",
     "foodOrigin": "United States",
     "description": "Slow-cooked pulled pork smothered in barbecue sauce, served in a soft bun with coleslaw."
   },
@@ -167,6 +203,8 @@
     "foodCategory": "Seafood",
     "price": 16.99,
     "quantity": 15,
+    "count": 0,
+    "madeBy": "preeti1@gmail.com",
     "foodOrigin": "North America",
     "description": "Salmon fillets marinated in a zesty lemon herb sauce and grilled to perfection."
   },
@@ -176,6 +214,8 @@
     "foodCategory": "Dessert",
     "price": 8.99,
     "quantity": 25,
+    "count": 0,
+    "madeBy": "preeti1@gmail.com",
     "foodOrigin": "Switzerland",
     "description": "A decadent dessert with melted chocolate for dipping fruits, marshmallows, and cookies."
   },
@@ -185,6 +225,8 @@
     "foodCategory": "Dessert",
     "price": 7.99,
     "quantity": 28,
+    "count": 0,
+    "madeBy": "preeti1@gmail.com",
     "foodOrigin": "Thailand",
     "description": "Sweet sticky rice topped with ripe mango slices and drizzled with coconut milk."
   }

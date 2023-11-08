@@ -1,14 +1,14 @@
 import Navbar from "../Shared/Navbar";
 import login from "../../assets/login.jpg";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import LoginMedia from "./LoginMedia";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
 
 const Login = () => {
 
-    const {signIn} = useAuth()
-
+    const {signIn} = useAuth();
+    const location = useLocation();const navigate = useNavigate();
 
      const handleSubmit = event => {
         event.preventDefault();
@@ -17,18 +17,20 @@ const Login = () => {
         const email = event.target.email.value;
         const password = event.target.password.value;
 
-        // console.log(name, email, password);
+         // creating a new user
+         signIn(email, password)
+         .then(res => {
+          toast.success('Login Successful');
+    
+          // navigate after login
+          navigate(location?.state ? location.state : '/')
+        })
 
-        // validation
-        if(password.length < 6){
-            toast.error('password is less than 6 characters');
-            return;
-        }
+        .catch(error => {
 
-        // creating a new user
-        signIn(email, password)
-        .then(res => console.log(res.user))
-        .catch(error=> console.log(error))
+          toast.error('email or password does not match');
+          // console.log(error);
+        })
          
     }
 
@@ -76,7 +78,7 @@ const Login = () => {
                 </div>
                 <div className="form-control mt-6">
                   <input
-                    className="btn bg-yellow-900 text-gray-200"
+                    className="btn bg-yellow-900 hover:bg-yellow-950 text-gray-200"
                     type="submit"
                     value="Login"
                   />

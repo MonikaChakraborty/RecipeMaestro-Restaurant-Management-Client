@@ -3,39 +3,51 @@ import Navbar from "../Shared/Navbar";
 import FoodItemCard from "./FoodItemCard";
 import Footer from "../Shared/Footer";
 import { useLoaderData } from "react-router-dom";
+import { data } from "autoprefixer";
 
 const AllFoodItems = () => {
   const [foodItems, setFoodItems] = useState([]);
+  const [currentPage, setCurrentPage] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(9);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const { count } = useLoaderData();
 
-  // const itemsPerPage = 9;
   const numberOfPages = Math.ceil(count / itemsPerPage);
-
-  console.log(count);
-  console.log(itemsPerPage);
-  console.log(numberOfPages);
-
-  // const pages = []
-  // for(let i=0; i<numberOfPages; i++){
-  //   pages.push(i)
-  // }
-
   const pages = [...Array(numberOfPages).keys()];
-  console.log(pages);
 
   useEffect(() => {
-    fetch("http://localhost:5000/allFoodItems")
+    const apiUrl = `http://localhost:5000/allFoodItems?page=${currentPage}&size=${itemsPerPage}&searchTerm=${searchTerm}`;
+    fetch(apiUrl)
       .then((res) => res.json())
       .then((data) => setFoodItems(data));
-  }, []);
-  
-const handleItemsPerPage = e => {
-  const val = parseInt(e.target.value);
-  console.log(val);
-  setItemsPerPage(val)
-}
+  }, [currentPage, itemsPerPage, searchTerm]);
+
+  const handleItemsPerPage = (e) => {
+    const val = parseInt(e.target.value);
+    setItemsPerPage(val);
+    setCurrentPage(0);
+  };
+
+  const handlePrevPage = () => {
+    if (currentPage > 0) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const handleNextPage = () => {
+    if (currentPage < pages.length - 1) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  // const handleSearch = () => {
+  //   setCurrentPage(0);
+  //   fetch(`http://localhost:5000/allFoodItems?page=0&size=${itemsPerPage}&searchTerm=${searchTerm}`)
+  //     .then((res) => res.json())
+  //     .then((data) => setFoodItems(data));
+  // };
+
   return (
     <div>
       <Navbar></Navbar>
@@ -46,16 +58,59 @@ const handleItemsPerPage = e => {
         </span>
       </h1>
 
-      <div className="max-w-6xl mx-auto mb-24">
+      {/* Search input and button */}
+      <div className="mb-4 flex justify-end">
+        <input
+          type="text"
+          placeholder="Search by food name..."
+          className="p-2 border border-gray-300 rounded"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+      </div>
+
+      <div className="max-w-screen-xl mx-auto mb-24">
         {/* pagination */}
-        <div className="pagination">
+        <div className="text-center pagination mb-10 text-lg">
+          <p className="text-gray-600 font-bold ">
+            Current page: {currentPage}
+          </p>
+          <button
+            onClick={handlePrevPage}
+            className="p-2 rounded font-medium bg-gray-600 text-white mr-2"
+          >
+            Prev
+          </button>
           {pages.map((page) => (
-            <button key={page}>{page}</button>
+            <button
+              className={`${
+                currentPage === page
+                  ? "bg-yellow-900 text-gray-200"
+                  : "bg-gray-300 text-gray-800"
+              } mr-3  py-1 px-3 font-bold rounded mt-3`}
+              onClick={() => setCurrentPage(page)}
+              key={page}
+            >
+              {page}
+            </button>
           ))}
-          <select value={itemsPerPage} onChange={handleItemsPerPage} name="" id="">
-            <option value="5">5</option>
+          <button
+            onClick={handleNextPage}
+            className="p-2 rounded font-medium  bg-gray-600  text-white mr-3"
+          >
+            Next
+          </button>
+          <select
+            className="bg-gray-300 py-1 px-3 font-bold rounded"
+            value={itemsPerPage}
+            onChange={handleItemsPerPage}
+            name=""
+            id=""
+          >
+            <option value="6">6</option>
             <option value="9">9</option>
-            <option value="10">10</option>
+            <option value="12">12</option>
+            <option value="18">18</option>
           </select>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
