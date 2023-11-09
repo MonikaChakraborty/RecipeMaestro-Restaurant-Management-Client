@@ -49,7 +49,7 @@ const FoodPurchase = () => {
     };
     console.log(order);
 
-    fetch("http://localhost:5000/orders", {
+    fetch("https://restaurant-management-system-server-kappa.vercel.app/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",

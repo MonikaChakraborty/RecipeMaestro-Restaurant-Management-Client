@@ -55,7 +55,7 @@ const Register = () => {
       event.target.reset();
     }
 
-    fetch('http://localhost:5000/users', {
+    fetch('https://restaurant-management-system-server-kappa.vercel.app/users', {
       method: 'POST',
       headers: {
           'content-type': 'application/json'

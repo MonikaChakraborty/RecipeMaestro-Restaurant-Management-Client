@@ -16,7 +16,7 @@ const AllFoodItems = () => {
   const pages = [...Array(numberOfPages).keys()];
 
   useEffect(() => {
-    const apiUrl = `http://localhost:5000/allFoodItems?page=${currentPage}&size=${itemsPerPage}&searchTerm=${searchTerm}`;
+    const apiUrl = `https://restaurant-management-system-server-kappa.vercel.app/allFoodItems?page=${currentPage}&size=${itemsPerPage}&searchTerm=${searchTerm}`;
     fetch(apiUrl)
       .then((res) => res.json())
       .then((data) => setFoodItems(data));

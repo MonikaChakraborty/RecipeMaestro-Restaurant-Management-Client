@@ -7,7 +7,7 @@ const OrderedFoodItems = () => {
 
   const [orders, setOrders] = useState([]);
 
-  const url = `http://localhost:5000/orders?email=${user?.email}`;
+  const url = `https://restaurant-management-system-server-kappa.vercel.app/orders?email=${user?.email}`;
 
   useEffect(() => {
     fetch(url)
