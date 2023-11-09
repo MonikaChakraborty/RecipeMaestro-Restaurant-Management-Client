@@ -1,5 +1,4 @@
 import { Link, useLoaderData } from "react-router-dom";
-import Navbar from "../Shared/Navbar";
 import { useState } from "react";
 import Modal from "react-modal";
 import { FaTimes } from "react-icons/fa";
@@ -20,7 +19,6 @@ const Details = ({ foodItem }) => {
 
   return (
     <div>
-      <Navbar />
       <div className="bg-gray-100 min-h-screen">
         <div className="max-w-7xl mx-auto py-12">
           <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">

@@ -1,12 +1,11 @@
 import { useLoaderData } from "react-router-dom";
-import Navbar from "../Shared/Navbar";
 import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
 import { useState } from "react";
 
 const FoodPurchase = () => {
   const foodItem = useLoaderData();
-  const { foodName, quantity, foodImage, price, foodCategory, foodOrigin } =
+  const { foodName, quantity, madeBy, foodImage, price, foodCategory, foodOrigin } =
     foodItem;
   const { user } = useAuth();
 
@@ -38,6 +37,7 @@ const FoodPurchase = () => {
 
     const order = {
       foodImage: foodImage,
+      madeBy: madeBy,
       foodName: foodName,
       foodCategory: foodCategory,
       price: price,
@@ -72,7 +72,6 @@ const FoodPurchase = () => {
 
   return (
     <div className="bg-gray-100 min-h-screen">
-      <Navbar />
       <div className="max-w-6xl mx-auto py-12">
         <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
           <h1 className="text-4xl font-extrabold text-gray-800 mb-8">

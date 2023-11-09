@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import Navbar from "../Shared/Navbar";
+// import Navbar from "../Shared/Navbar";
 import FoodItemCard from "./FoodItemCard";
-import Footer from "../Shared/Footer";
 import { useLoaderData } from "react-router-dom";
 // import { data } from "autoprefixer";
 
@@ -50,7 +49,7 @@ const AllFoodItems = () => {
 
   return (
     <div>
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
       <h1 className="text-3xl lg:text-5xl font-extrabold text-yellow-800 mb-10 text-center bg-gradient-to-r from-transparent to-yellow-700 mt-10">
         🌮 Discover Culinary Delights 🍜
         <span className="block text-sm lg:text-base text-gray-600 mt-2">
@@ -122,7 +121,6 @@ const AllFoodItems = () => {
           ))}
         </div>
       </div>
-      <Footer></Footer>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import Navbar from "../Shared/Navbar";
+// import Navbar from "../Shared/Navbar";
 import login from "../../assets/login.jpg";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import LoginMedia from "./LoginMedia";
@@ -39,7 +39,7 @@ const Login = () => {
 
   return (
     <div>
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="">

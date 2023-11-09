@@ -33,7 +33,7 @@ const Navbar = () => {
               : "text-gray-200 text-lg font-medium hover:text-gray-200"
           }
         >
-          Add Food Items
+          All Food Items
         </NavLink>
       </li>
 
@@ -112,6 +112,30 @@ const Navbar = () => {
               </li>
 
               <li>
+                <Link to="/addFoodItems">
+                  <button className="btn btn-ghost text-sm lg:text-base bg-slate-200 normal-case mb-2">
+                    Add Food Item
+                  </button>
+                </Link>
+              </li>
+
+              <li>
+                <Link to="/addedFoodItems">
+                  <button className="btn btn-ghost text-sm lg:text-base bg-slate-200 normal-case mb-2">
+                    My Added Food Items
+                  </button>
+                </Link>
+              </li>
+
+              <li>
+                <Link to="/orders">
+                  <button className="btn btn-ghost text-sm lg:text-base bg-slate-200 normal-case mb-2">
+                    My ordered Food Items
+                  </button>
+                </Link>
+              </li>
+
+              <li>
                 <button
                   onClick={logOut}
                   className="btn btn-ghost text-sm lg:text-base  bg-slate-200 normal-case"
@@ -130,7 +154,5 @@ const Navbar = () => {
     </div>
   );
 };
-
-
 
 export default Navbar;

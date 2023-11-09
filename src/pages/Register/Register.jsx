@@ -1,4 +1,4 @@
-import Navbar from "../Shared/Navbar";
+// import Navbar from "../Shared/Navbar";
 import login from "../../assets/login.jpg";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
@@ -7,6 +7,8 @@ import toast from "react-hot-toast";
 const Register = () => {
   const { createUser, handleUpdateProfile } = useAuth();
   const navigate = useNavigate();
+
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -39,6 +41,8 @@ const Register = () => {
       // Create a new user
       const userCredential = await createUser(email, password);
 
+
+      
       // Update user profile
       await handleUpdateProfile(name, photo);
       toast.success("Registration Successful");
@@ -68,7 +72,7 @@ const Register = () => {
 
   return (
     <div>
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="">
