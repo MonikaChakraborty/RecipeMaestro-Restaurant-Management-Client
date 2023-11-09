@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 // import Navbar from "../Shared/Navbar";
 import FoodItemCard from "./FoodItemCard";
 import { useLoaderData } from "react-router-dom";
-// import { data } from "autoprefixer";
 
 const AllFoodItems = () => {
   const [foodItems, setFoodItems] = useState([]);
@@ -40,16 +39,9 @@ const AllFoodItems = () => {
     }
   };
 
-  // const handleSearch = () => {
-  //   setCurrentPage(0);
-  //   fetch(`http://localhost:5000/allFoodItems?page=0&size=${itemsPerPage}&searchTerm=${searchTerm}`)
-  //     .then((res) => res.json())
-  //     .then((data) => setFoodItems(data));
-  // };
 
   return (
     <div>
-      {/* <Navbar></Navbar> */}
       <h1 className="text-3xl lg:text-5xl font-extrabold text-yellow-800 mb-10 text-center bg-gradient-to-r from-transparent to-yellow-700 mt-10">
         🌮 Discover Culinary Delights 🍜
         <span className="block text-sm lg:text-base text-gray-600 mt-2">
@@ -124,5 +116,7 @@ const AllFoodItems = () => {
     </div>
   );
 };
+
+
 
 export default AllFoodItems;
