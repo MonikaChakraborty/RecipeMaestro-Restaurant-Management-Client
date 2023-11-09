@@ -17,7 +17,7 @@ const OrderedFoodItems = () => {
 
   return (
     <div>
-      <h2 className="text-4xl font-bold">Orders: {orders.length}</h2>
+      <h2 className="text-4xl font-bold text-center mt-10 mb-8">My Ordered Items</h2>
 
       <div className="overflow-x-auto">
         <table className="table table-zebra">

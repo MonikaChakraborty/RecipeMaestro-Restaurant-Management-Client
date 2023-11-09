@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
+import AddedFoodItemsRow from "./AddedFoodItemsRow";
 
 const AddedFoodItems = () => {
 
@@ -17,7 +18,7 @@ const AddedFoodItems = () => {
   }, [url]);
     return (
         <div>
-      <h2 className="text-4xl font-bold">My Added Food Items: {addedFoodItems.length}</h2>
+      <h2 className="text-4xl font-bold text-center mt-10 mb-8">My Added Food Items</h2>
 
       <div className="overflow-x-auto">
         <table className="table table-zebra">
@@ -26,18 +27,17 @@ const AddedFoodItems = () => {
             <tr>
               <th>Food Image</th>
               <th>Food Name</th>
+              <th>Description</th>
               <th>Price</th>
               <th>Food Category</th>
               <th>Quantity</th>
-              <th>Food Owner</th>
-              <th>Order Time</th>
               <th></th>
             </tr>
           </thead>
           <tbody>
-            {/* {addedFoodItems.map((addedFoodItem) => (
-              <OrderRow key={addedFoodItem._id} order={addedFoodItem}></OrderRow>
-            ))} */}
+            {addedFoodItems.map((addedFoodItem) => (
+              <AddedFoodItemsRow key={addedFoodItem._id} addedFoodItem={addedFoodItem}></AddedFoodItemsRow>
+            ))}
           </tbody>
         </table>
       </div>
