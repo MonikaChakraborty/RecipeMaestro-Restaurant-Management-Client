@@ -67,6 +67,7 @@ const FoodPurchase = () => {
             confirmButtonText: "Cool",
           });
         }
+        form.reset();
       });
   };
 
