@@ -50,7 +50,7 @@ const AllFoodItems = () => {
             Go Back
           </button>
         </Link>
-        <div className="border text-center">
+        <div className="text-center">
           <h1 className="text-3xl lg:text-5xl font-extrabold  text-yellow-800  text-center ">
             🌮 Discover Culinary Delights 🍜
             <span className="block text-sm lg:text-base text-gray-600 mt-2">
