@@ -41,13 +41,16 @@ const UpdateAddedFoodItems = () => {
     console.log(updatedFoodItem);
 
     // send to server
-    fetch(`http://localhost:5000/addedFoodItems/updateAddedFoodItems/${_id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(updatedFoodItem),
-    })
+    fetch(
+      `https://restaurant-management-system-server-kappa.vercel.app/addedFoodItems/updateAddedFoodItems/${_id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updatedFoodItem),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

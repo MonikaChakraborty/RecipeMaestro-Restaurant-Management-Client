@@ -23,7 +23,7 @@ const Details = ({ foodItem }) => {
       <Navbar></Navbar>
       <div className="bg-gray-100 min-h-screen">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
+          <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg p-7">
             <h1 className="text-4xl font-extrabold text-gray-800 mb-8 mt-20">
               Details of {details.foodName}
             </h1>
@@ -42,12 +42,12 @@ const Details = ({ foodItem }) => {
                   contentLabel="Image Preview"
                 >
                   <img
-                    className="w-full h-auto"
+                    className="w-full h-auto mt-10"
                     src={details.foodImage}
                     alt=""
                   />
                   <button
-                    className="absolute top-3 right-3 rounded p-2 text-red-500 bg-gray-300 hover:bg-gray-400 cursor-pointer"
+                    className="absolute top-12 right-2 rounded p-1 text-red-500 bg-gray-300 hover:bg-gray-400 cursor-pointer"
                     onClick={closeModal}
                   >
                     <FaTimes size={24} />

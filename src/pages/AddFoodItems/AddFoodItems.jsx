@@ -198,13 +198,16 @@ const AddFoodItems = () => {
     console.log(foodItem);
 
     // send to server
-    fetch("http://localhost:5000/addFoodItems", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(foodItem),
-    })
+    fetch(
+      "https://restaurant-management-system-server-kappa.vercel.app/addFoodItems",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(foodItem),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

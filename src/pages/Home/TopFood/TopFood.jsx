@@ -5,7 +5,9 @@ const TopFood = () => {
   const [topFood, setTopFood] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/topFood")
+    fetch(
+      "https://restaurant-management-system-server-kappa.vercel.app/topFood"
+    )
       .then((res) => res.json())
       .then((data) => setTopFood(data));
   }, []);

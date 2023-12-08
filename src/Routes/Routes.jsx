@@ -27,7 +27,10 @@ const router = createBrowserRouter([
       {
         path: "/allFoodItems",
         element: <AllFoodItems></AllFoodItems>,
-        loader: () => fetch("http://localhost:5000/allFoodItemsCount"),
+        loader: () =>
+          fetch(
+            "https://restaurant-management-system-server-kappa.vercel.app/allFoodItemsCount"
+          ),
       },
       {
         path: "/blog",
@@ -45,7 +48,9 @@ const router = createBrowserRouter([
         path: "/details/:id",
         element: <Details></Details>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/details/${params.id}`),
+          fetch(
+            `https://restaurant-management-system-server-kappa.vercel.app/details/${params.id}`
+          ),
       },
       {
         path: "/foodPurchase/:id",
@@ -55,7 +60,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/foodPurchase/${params.id}`),
+          fetch(
+            `https://restaurant-management-system-server-kappa.vercel.app/foodPurchase/${params.id}`
+          ),
       },
 
       {
@@ -77,7 +84,7 @@ const router = createBrowserRouter([
         element: <UpdateAddedFoodItems></UpdateAddedFoodItems>,
         loader: ({ params }) =>
           fetch(
-            `http://localhost:5000/addedFoodItems/updateAddedFoodItems/${params.id}`
+            `https://restaurant-management-system-server-kappa.vercel.app/addedFoodItems/updateAddedFoodItems/${params.id}`
           ),
       },
 

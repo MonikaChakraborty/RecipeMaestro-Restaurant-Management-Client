@@ -7,7 +7,7 @@ const AddedFoodItems = () => {
 
   const [addedFoodItems, setAddedFoodItems] = useState([]);
 
-  const url = `http://localhost:5000/addedFoodItems?madeBy=${user?.email}`;
+  const url = `https://restaurant-management-system-server-kappa.vercel.app/addedFoodItems?madeBy=${user?.email}`;
   //   console.log(url);
 
   useEffect(() => {
