@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import OrderRow from "./OrderRow";
+import Navbar from "../Shared/Navbar";
 
 const OrderedFoodItems = () => {
   const { user } = useAuth();
 
   const [orders, setOrders] = useState([]);
 
-  const url = `https://restaurant-management-system-server-kappa.vercel.app/orders?email=${user?.email}`;
+  const url = `http://localhost:5000/orders?email=${user?.email}`;
 
   useEffect(() => {
     fetch(url)
@@ -17,29 +18,38 @@ const OrderedFoodItems = () => {
 
   return (
     <div>
-      <h2 className="text-4xl font-bold text-center mt-10 mb-8">My Ordered Items</h2>
+      <Navbar></Navbar>
+      <div
+        style={{
+          minHeight: "calc(100vh - 120px)", // Subtract the height of navbar and footer
+        }}
+      >
+        <h2 className="text-4xl font-bold text-center pt-24">
+          My Ordered Items
+        </h2>
 
-      <div className="overflow-x-auto">
-        <table className="table table-zebra">
-          {/* head */}
-          <thead>
-            <tr>
-              <th>Food Image</th>
-              <th>Food Name</th>
-              <th>Price</th>
-              <th>Food Category</th>
-              <th>Quantity</th>
-              <th>Food Owner</th>
-              <th>Order Time</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {orders.map((order) => (
-              <OrderRow key={order._id} order={order}></OrderRow>
-            ))}
-          </tbody>
-        </table>
+        <div className="overflow-x-auto max-w-screen-xl mx-auto">
+          <table className="table table-zebra">
+            {/* head */}
+            <thead>
+              <tr>
+                <th>Food Image</th>
+                <th>Food Name</th>
+                <th>Price</th>
+                <th>Food Category</th>
+                <th>Quantity</th>
+                <th>Food Owner</th>
+                <th>Order Time</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {orders.map((order) => (
+                <OrderRow key={order._id} order={order}></OrderRow>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

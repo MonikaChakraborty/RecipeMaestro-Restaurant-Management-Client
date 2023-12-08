@@ -2,6 +2,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import { useState } from "react";
 import Modal from "react-modal";
 import { FaTimes } from "react-icons/fa";
+import Navbar from "../Shared/Navbar";
 
 const Details = ({ foodItem }) => {
   const details = useLoaderData();
@@ -19,10 +20,11 @@ const Details = ({ foodItem }) => {
 
   return (
     <div>
+      <Navbar></Navbar>
       <div className="bg-gray-100 min-h-screen">
-        <div className="max-w-7xl mx-auto py-12">
+        <div className="max-w-7xl mx-auto">
           <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
-            <h1 className="text-4xl font-extrabold text-gray-800 mb-8">
+            <h1 className="text-4xl font-extrabold text-gray-800 mb-8 mt-20">
               Details of {details.foodName}
             </h1>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

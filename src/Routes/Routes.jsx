@@ -27,7 +27,7 @@ const router = createBrowserRouter([
       {
         path: "/allFoodItems",
         element: <AllFoodItems></AllFoodItems>,
-        loader: () => fetch("https://restaurant-management-system-server-kappa.vercel.app/allFoodItemsCount"),
+        loader: () => fetch("http://localhost:5000/allFoodItemsCount"),
       },
       {
         path: "/blog",
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
         path: "/details/:id",
         element: <Details></Details>,
         loader: ({ params }) =>
-          fetch(`https://restaurant-management-system-server-kappa.vercel.app/details/${params.id}`),
+          fetch(`http://localhost:5000/details/${params.id}`),
       },
       {
         path: "/foodPurchase/:id",
@@ -55,12 +55,16 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`https://restaurant-management-system-server-kappa.vercel.app/foodPurchase/${params.id}`),
+          fetch(`http://localhost:5000/foodPurchase/${params.id}`),
       },
 
       {
         path: "/addFoodItems",
-        element: <PrivateRoute><AddFoodItems></AddFoodItems></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <AddFoodItems></AddFoodItems>
+          </PrivateRoute>
+        ),
       },
 
       {
@@ -71,12 +75,19 @@ const router = createBrowserRouter([
       {
         path: "/addedFoodItems/updateAddedFoodItems/:id",
         element: <UpdateAddedFoodItems></UpdateAddedFoodItems>,
-        loader: ({params}) => fetch(`https://restaurant-management-system-server-kappa.vercel.app/addedFoodItems/updateAddedFoodItems/${params.id}`)
+        loader: ({ params }) =>
+          fetch(
+            `http://localhost:5000/addedFoodItems/updateAddedFoodItems/${params.id}`
+          ),
       },
 
       {
         path: "/orders",
-        element: <PrivateRoute><OrderedFoodItems></OrderedFoodItems></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <OrderedFoodItems></OrderedFoodItems>
+          </PrivateRoute>
+        ),
       },
     ],
   },

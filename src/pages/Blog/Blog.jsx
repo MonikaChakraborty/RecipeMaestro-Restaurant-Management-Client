@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
 
 const Blog = () => {
   return (
-    <div className="max-w-2xl mx-auto mt-10 p-6 bg-white shadow-md rounded-md">
-      <h1 className="text-4xl font-bold mb-6 text-center">Blog</h1>
+    <div className="max-w-2xl mx-auto p-6 bg-white shadow-md rounded-md">
+      <Link to="/"><button className="bg-yellow-900 text-gray-200 hover:bg-yellow-950 btn">Go to Home</button></Link>
+      <h1 className="text-4xl font-bold mb-6 text-center mt-10">Blog</h1>
 
       <div className="mb-8">
         <h3 className="text-2xl font-bold mb-2">1. What is One way data binding?</h3>

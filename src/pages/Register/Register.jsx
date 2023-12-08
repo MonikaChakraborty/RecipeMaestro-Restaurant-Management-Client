@@ -8,8 +8,6 @@ const Register = () => {
   const { createUser, handleUpdateProfile } = useAuth();
   const navigate = useNavigate();
 
-
-
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -23,8 +21,8 @@ const Register = () => {
       name,
       email,
       photo,
-      password
-  }
+      password,
+    };
 
     // console.log(name, email, password);
 
@@ -41,8 +39,6 @@ const Register = () => {
       // Create a new user
       const userCredential = await createUser(email, password);
 
-
-      
       // Update user profile
       await handleUpdateProfile(name, photo);
       toast.success("Registration Successful");
@@ -55,20 +51,18 @@ const Register = () => {
       event.target.reset();
     }
 
-    fetch('https://restaurant-management-system-server-kappa.vercel.app/users', {
-      method: 'POST',
+    fetch("http://localhost:5000/users", {
+      method: "POST",
       headers: {
-          'content-type': 'application/json'
+        "content-type": "application/json",
       },
-      body: JSON.stringify(user)
-  })
-  .then(res => res.json())
-  .then(data => {
-      console.log(data);
-  })
+      body: JSON.stringify(user),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
   };
-
-
 
   return (
     <div>
@@ -147,7 +141,10 @@ const Register = () => {
                 </div>
               </form>
               <p className="my-4 text-center">
-                Already Have an account? <Link to="/login" className="text-yellow-900 font-bold">Login Now!</Link>
+                Already Have an account?{" "}
+                <Link to="/login" className="text-yellow-900 font-bold">
+                  Login Now!
+                </Link>
               </p>
             </div>
           </div>
@@ -156,6 +153,5 @@ const Register = () => {
     </div>
   );
 };
-
 
 export default Register;

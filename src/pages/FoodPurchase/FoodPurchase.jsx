@@ -2,11 +2,19 @@ import { useLoaderData } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
 import { useState } from "react";
+import Navbar from "../Shared/Navbar";
 
 const FoodPurchase = () => {
   const foodItem = useLoaderData();
-  const { foodName, quantity, madeBy, foodImage, price, foodCategory, foodOrigin } =
-    foodItem;
+  const {
+    foodName,
+    quantity,
+    madeBy,
+    foodImage,
+    price,
+    foodCategory,
+    foodOrigin,
+  } = foodItem;
   const { user } = useAuth();
 
   const [errorMessage, setErrorMessage] = useState("");
@@ -49,7 +57,7 @@ const FoodPurchase = () => {
     };
     console.log(order);
 
-    fetch("https://restaurant-management-system-server-kappa.vercel.app/orders", {
+    fetch("http://localhost:5000/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -73,7 +81,8 @@ const FoodPurchase = () => {
 
   return (
     <div className="bg-gray-100 min-h-screen">
-      <div className="max-w-6xl mx-auto py-12">
+      <Navbar></Navbar>
+      <div className="max-w-6xl mx-auto py-36">
         <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
           <h1 className="text-4xl font-extrabold text-gray-800 mb-8">
             Place Your Order

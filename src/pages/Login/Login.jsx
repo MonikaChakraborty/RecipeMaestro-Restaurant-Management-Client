@@ -36,11 +36,10 @@ const Login = () => {
 
 
 
-
   return (
     <div>
       {/* <Navbar></Navbar> */}
-      <div className="hero min-h-screen bg-base-200">
+      <div className="hero min-h-screen bg-base-200 mt-20">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="">
             <img className="w-96 h-96" src={login} alt="" />

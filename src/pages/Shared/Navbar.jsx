@@ -55,7 +55,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-yellow-950	">
+    <div className="navbar bg-yellow-950	opacity-80 z-10 fixed">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -105,40 +105,40 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content z-[1] shadow bg-base-200 rounded-box w-30 lg:w-56 mt-3"
             >
-              <li>
-                <button className="btn btn-ghost text-sm lg:text-base bg-slate-200 normal-case mb-2">
+             <div className="mb-2">
+                <p className="text-sm rounded-lg text-center p-2 font-bold lg:text-base bg-slate-200 normal-case">
                   {user.displayName}
-                </button>
-              </li>
+                </p>
+              </div>
 
-              <li>
+              <div>
                 <Link to="/addFoodItems">
-                  <button className="btn btn-ghost text-sm lg:text-base bg-slate-200 normal-case mb-2">
+                  <button className="btn btn-block btn-ghost text-sm lg:text-base bg-slate-200 normal-case mb-2">
                     Add Food Item
                   </button>
                 </Link>
-              </li>
+              </div>
 
-              <li>
+              <div>
                 <Link to="/addedFoodItems">
-                  <button className="btn btn-ghost text-sm lg:text-base bg-slate-200 normal-case mb-2">
+                  <button className="btn btn-block btn-ghost text-sm lg:text-base bg-slate-200 normal-case mb-2">
                     My Added Food Items
                   </button>
                 </Link>
-              </li>
+              </div>
 
-              <li>
+              <div>
                 <Link to="/orders">
-                  <button className="btn btn-ghost text-sm lg:text-base bg-slate-200 normal-case mb-2">
+                  <button className="btn btn-block btn-ghost text-sm lg:text-base bg-slate-200 normal-case mb-2">
                     My ordered Food Items
                   </button>
                 </Link>
-              </li>
+              </div>
 
               <li>
                 <button
                   onClick={logOut}
-                  className="btn btn-ghost text-sm lg:text-base  bg-slate-200 normal-case"
+                  className="btn btn-ghost text-sm lg:text-base btn-block bg-slate-200 normal-case"
                 >
                   Logout
                 </button>
