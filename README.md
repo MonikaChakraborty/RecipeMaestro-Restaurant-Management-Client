@@ -32,7 +32,7 @@
 
 
 
-## Technology used Technologies Used 🛠️
+## Technologies Used 🛠️
 
 HTML, Tailwind CSS, React, Nodejs, Firebase, React Router, MongoDB, Framer Motion, SweetAlert2, React Hot Toast.
 
