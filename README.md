@@ -21,7 +21,6 @@
 - **Item Details**: On the Details page, user can have a preview of the item's image and a detailed description about it with button to place order.
 
 
-
 - **Order Items**: User can place order for available items.
 
 
