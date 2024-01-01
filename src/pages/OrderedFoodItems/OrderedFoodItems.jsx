@@ -21,14 +21,14 @@ const OrderedFoodItems = () => {
       <Navbar></Navbar>
       <div
         style={{
-          minHeight: "calc(100vh - 120px)", // Subtract the height of navbar and footer
+          minHeight: "calc(100vh - 120px)" // Subtract the height of navbar and footer
         }}
       >
-        <h2 className="text-4xl font-bold text-center pt-24">
+        <h2 className="text-4xl font-bold text-center pt-28">
           My Ordered Items
         </h2>
 
-        <div className="overflow-x-auto max-w-screen-xl mx-auto">
+        <div className="overflow-x-auto max-w-6xl mx-auto mt-6">
           <table className="table table-zebra">
             {/* head */}
             <thead>

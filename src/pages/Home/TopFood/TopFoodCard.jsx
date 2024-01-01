@@ -8,7 +8,9 @@ const TopFoodCard = ({food}) => {
         <img
           src={foodImage}
           alt=""
-          className="w-full h-64 object-cover rounded-xl"
+          className="w-full h-64 object-cover rounded-xl" data-aos="zoom-in"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="1000"
         />
       </figure>
       <div className="card-body items-center text-center">

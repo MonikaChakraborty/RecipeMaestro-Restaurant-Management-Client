@@ -12,28 +12,58 @@ const About = () => {
     <div className="max-w-screen-xl mx-auto ">
       <div className="flex gap-1 h-[80vh]">
         {/* Left Frame */}
-        <div className="flex flex-col gap-1 w-[30%] h-[80vh] frame-1 text-white ">
+        <div className="flex flex-col gap-1 w-[30%] h-[80vh] frame-1 text-white">
           <div className="grid grid-cols-2 gap-1 h-[35vh]">
-            <img className="h-[35vh] object-cover" src={box1} alt="" />
+            <img
+              className="h-[35vh] object-cover"
+              src={box1}
+              alt=""
+              data-aos="flip-left"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="1000"
+            />
 
-            <img className="h-[35vh] object-cover" src={box2} alt="" />
+            <img
+              className="h-[35vh] object-cover"
+              src={box2}
+              alt=""
+              data-aos="flip-left"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="1000"
+            />
           </div>
 
           <div className=" gap-1 grid grid-cols-3 h-[45vh]">
             <div className="col-span-2 h-[45vh]">
-              <img className="h-[44.5vh] object-cover" src={box3} alt="" />
+              <img
+                className="h-[44.5vh] object-cover"
+                src={box3}
+                alt=""
+                data-aos="flip-left"
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="1000"
+              />
             </div>
 
-            <img className="h-[44.5vh] object-cover" src={box4} alt="" />
+            <img
+              className="h-[44.5vh] object-cover"
+              src={box4}
+              alt=""
+              data-aos="flip-left"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="1000"
+            />
           </div>
         </div>
 
         {/* Middle Frame */}
-        <div className="w-[40%] h-[80vh] relative frame-2 text-white">
+        <div className="w-[40%] h-[80vh] relative frame-2 text-white" data-aos="zoom-in"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="1000">
           <img
             className="h-[80vh] w-full object-cover"
             src={middleBox}
-            alt=""
+            alt="" 
           />
 
           <div className="absolute inset-0 bg-black opacity-60"></div>
@@ -61,12 +91,33 @@ const About = () => {
         <div className="w-[30%] frame-3  text-white">
           <div className="grid grid-cols-2 gap-1">
             <div className="h-[80vh]">
-              <img className="h-[80vh] object-cover" src={box5} alt="" />
+              <img
+                className="h-[80vh] object-cover"
+                src={box5}
+                alt=""
+                data-aos="flip-right"
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="1000"
+              />
             </div>
 
             <div className="flex flex-col gap-1 h-[80vh]">
-              <img className="h-[40vh] object-cover" src={box6} alt="" />
-              <img className="h-[40vh] object-cover" src={box7} alt="" />
+              <img
+                className="h-[40vh] object-cover"
+                src={box6}
+                alt=""
+                data-aos="flip-right"
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="1000"
+              />
+              <img
+                className="h-[40vh] object-cover"
+                src={box7}
+                alt=""
+                data-aos="flip-right"
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="1000"
+              />
             </div>
           </div>
         </div>

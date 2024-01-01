@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import AddedFoodItemsRow from "./AddedFoodItemsRow";
+import Navbar from "../Shared/Navbar";
 
 const AddedFoodItems = () => {
   const { user } = useAuth();
@@ -16,12 +17,17 @@ const AddedFoodItems = () => {
       .then((data) => setAddedFoodItems(data));
   }, [url]);
   return (
-    <div>
-      <h2 className="text-4xl font-bold text-center mt-10 mb-8">
+    <div className="">
+       <Navbar></Navbar>
+       
+    <div style={{
+          minHeight: "calc(100vh - 120px)" // Subtract the height of navbar and footer
+        }}>
+    <h2 className="text-4xl font-bold text-center mb-8 pt-28">
         My Added Food Items
       </h2>
 
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto max-w-6xl mx-auto mt-6">
         <table className="table table-zebra">
           {/* head */}
           <thead>
@@ -45,6 +51,7 @@ const AddedFoodItems = () => {
           </tbody>
         </table>
       </div>
+    </div>
     </div>
   );
 };

@@ -67,7 +67,7 @@ const AllFoodItems = () => {
                avatar mr-3 "
               >
                 <div className="w-48 rounded-full">
-                  <img src={user.photoURL} alt={user.displayName} />
+                  <img src={user.photoURL} alt={user.displayName}  />
                 </div>
               </label>
 

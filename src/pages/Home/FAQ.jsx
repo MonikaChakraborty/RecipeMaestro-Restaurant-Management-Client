@@ -127,7 +127,9 @@ export default class App extends Component {
     return (
       <div className="max-w-screen-xl mx-auto mb-16 lg:mt-24 mt-16">
         <div className="flex flex-col lg:flex-row">
-     <div className="max-w-screen-xl mx-auto p-8">
+     <div className="max-w-screen-xl mx-auto p-8" data-aos="fade-up-right"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="1000">
      {data.title}
     <div className="lg:hidden block w-96 -mt-24 -mb-24 mx-auto">
     <Lottie className="" animationData={faq}></Lottie>

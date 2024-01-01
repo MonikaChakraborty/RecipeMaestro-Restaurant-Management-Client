@@ -5,7 +5,9 @@ import { BsFacebook, BsTwitter, BsInstagram } from "react-icons/bs";
 const Footer = () => {
   return (
     <div className="">
-      <div className="bg-yellow-950 py-12">
+      <div className="bg-yellow-950 py-12" data-aos="zoom-in-up"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="1000">
         <div className="container grid grid-cols-1 mx-auto lg:grid-cols-3 gap-10 lg:gap-16 text-gray-200">
           {/* left column */}
           <div className="lg:mt-5">

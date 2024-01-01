@@ -10,7 +10,9 @@ const FoodItemCard = ({ foodItem }) => {
         <img
           src={foodImage}
           alt={foodName}
-          className="w-full h-64 object-cover"
+          className="w-full h-64 object-cover" data-aos="zoom-in"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="1000"
         />
       </figure>
       <div className="card-body p-8">
