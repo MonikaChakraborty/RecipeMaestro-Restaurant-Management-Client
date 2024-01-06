@@ -13,6 +13,7 @@ import AddedFoodItems from "../pages/AddedFoodItems/AddedFoodItems";
 import OrderedFoodItems from "../pages/OrderedFoodItems/OrderedFoodItems";
 import UpdateAddedFoodItems from "../pages/UpdateAddedFoodItems/UpdateAddedFoodItems";
 import ErrorPage from "../pages/ErrorPage";
+import OurLocation from "../pages/OurLocation/OurLocation";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
           fetch(
             "https://restaurant-management-system-server-kappa.vercel.app/allFoodItemsCount"
           ),
+      },
+      {
+        path: "/ourLocation",
+        element: <OurLocation></OurLocation>,
       },
       {
         path: "/blog",

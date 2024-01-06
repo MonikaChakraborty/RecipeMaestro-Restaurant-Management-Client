@@ -47,7 +47,7 @@ const AllFoodItems = () => {
         <Link to="/">
           {" "}
           <button className="rounded absolute left-10 p-3 top-16  bg-yellow-900 text-gray-200 hover:bg-yellow-950 font-bold text-lg">
-            Go Back
+            Go to Home
           </button>
         </Link>
         <div className="text-center">

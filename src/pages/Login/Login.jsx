@@ -1,9 +1,11 @@
 // import Navbar from "../Shared/Navbar";
-import login from "../../assets/login.jpg";
+// import login from "../../assets/login.jpg";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import LoginMedia from "./LoginMedia";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
+import login from './login.json'
+import Lottie from "lottie-react";
 
 const Login = () => {
 
@@ -39,12 +41,13 @@ const Login = () => {
   return (
     <div>
       {/* <Navbar></Navbar> */}
-      <div className="hero min-h-screen bg-base-200 mt-20">
-        <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="">
-            <img className="w-96 h-96" src={login} alt="" />
+      <div className="hero bg-base-200 mt-20">
+        <div className="hero-content flex-col lg:flex-row-reverse justify-center items-center">
+          <div className="" data-aos="fade-left">
+            {/* <img className="w-96 h-96" src={login} alt="" /> */}
+            <Lottie animationData={login}></Lottie>
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100" data-aos="fade-right">
             <div className="card-body">
               <h1 className="text-3xl font-bold text-center">Login now!</h1>
               <form onSubmit={handleSubmit}>

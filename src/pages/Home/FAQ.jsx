@@ -4,7 +4,7 @@ import faq from "./FAQ.json";
 import Lottie from "lottie-react";
 const data = {
   title: (
-    <div className="mb-8 text-3xl lg:text-4xl text-center font-bold text-yellow-900">
+    <div className="mb-8 text-3xl lg:text-4xl text-center font-bold text-yellow-900" >
       FAQs
     </div>
   ),
@@ -51,7 +51,7 @@ export default class App extends Component {
     return (
       <div className="max-w-screen-xl mx-auto lg:mt-24 mt-16">
         <div className="flex flex-col lg:flex-row">
-     <div className="p-8" data-aos="fade-up-right"
+     <div className="p-8" data-aos="fade-right"
           data-aos-easing="ease-out-cubic"
           data-aos-duration="1000">
      {data.title}
@@ -78,7 +78,7 @@ export default class App extends Component {
           />
      </div>
 
-          <div className="hidden lg:block" 
+          <div className="hidden lg:block " 
           >
           <Lottie className="" animationData={faq}></Lottie>
           </div>

@@ -28,7 +28,7 @@ const OrderedFoodItems = () => {
           My Ordered Items
         </h2>
 
-        <div className="overflow-x-auto max-w-6xl mx-auto mt-6">
+        <div className="overflow-x-auto max-w-6xl mx-auto npm m run ">
           <table className="table table-zebra">
             {/* head */}
             <thead>

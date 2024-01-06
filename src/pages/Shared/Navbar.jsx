@@ -1,9 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import useAuth from "../../hooks/useAuth";
+import useOrderedFoodItems from "../../hooks/useOrderedFoodItems";
+import { FaShoppingCart } from "react-icons/fa";
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
+  const [orders] = useOrderedFoodItems();
 
   const navLinks = (
     <>
@@ -39,6 +42,35 @@ const Navbar = () => {
 
       <li>
         <NavLink
+          to="/ourLocation"
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "pending"
+              : isActive
+              ? "text-gray-200 bg-yellow-900  text-lg font-medium hover:text-gray-200"
+              : "text-gray-200 text-lg font-medium hover:text-gray-200"
+          }
+        >
+          Our Location
+        </NavLink>
+      </li>
+
+      {/* {
+        user && <li>
+        <Link to="/orders">
+          <button className="btn -mt-2 -ml-2 border-none">
+            <FaShoppingCart size={20} className="text-white" />
+
+            <div className="badge bg-amber-600 text-white  text-lg py-3 px-3">
+              +{orders.length}
+            </div>
+          </button>
+        </Link>
+      </li>
+      } */}
+
+      {/* <li>
+        <NavLink
           to="/blog"
           className={({ isActive, isPending }) =>
             isPending
@@ -50,7 +82,7 @@ const Navbar = () => {
         >
           Blog
         </NavLink>
-      </li>
+      </li> */}
     </>
   );
 
@@ -127,13 +159,13 @@ const Navbar = () => {
                 </Link>
               </div>
 
-              <div>
+              {/* <div>
                 <Link to="/orders">
                   <button className="btn btn-block btn-ghost text-sm lg:text-base bg-slate-200 normal-case mb-2">
                     My ordered Food Items
                   </button>
                 </Link>
-              </div>
+              </div> */}
 
               <li>
                 <button
@@ -147,7 +179,7 @@ const Navbar = () => {
           </div>
         ) : (
           <Link to="/login">
-            <button className="btn mr-3">Login</button>
+            <button className="btn mr-3 text-slate-200">Login</button>
           </Link>
         )}
       </div>
