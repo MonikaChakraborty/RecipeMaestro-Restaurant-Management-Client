@@ -1,8 +1,10 @@
 // import Navbar from "../Shared/Navbar";
-import login from "../../assets/login.jpg";
+// import login from "../../assets/login.jpg";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
+import register from "./register.json"
+import Lottie from "lottie-react";
 
 const Register = () => {
   const { createUser, handleUpdateProfile } = useAuth();
@@ -71,11 +73,12 @@ const Register = () => {
     <div>
       {/* <Navbar></Navbar> */}
       <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="">
-            <img className="w-96 h-96" src={login} alt="" />
+        <div className="hero-content flex-col lg:flex-row gap-12">
+          <div className=" " data-aos="fade-right">
+            {/* <img className="w-96 h-96" src={login} alt="" /> */}
+            <Lottie className="lg:h-[60vh]" animationData={register}></Lottie>
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100" data-aos="fade-left">
             <div className="card-body">
               <h1 className="text-3xl font-bold text-center">Register now!</h1>
               <form onSubmit={handleSubmit}>
