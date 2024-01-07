@@ -1,25 +1,12 @@
-// const OrderRow = ({order}) => {
-//     const{foodImage, foodName, foodCategory, price, quantity, madeBy, purchaseDate} = order;
-//      return (
-//         <tr>
-//         <div>
-//         <th><img className="rounded-xl" src={foodImage}alt="" /></th>
-//         </div>
-//         <td>{foodName}</td>
-//         <td>{foodCategory}</td>
-//         <td>{price}</td>
-//         <td>{quantity}</td>
-//         <td>{madeBy}</td>
-//         <td>{purchaseDate}</td>
-//       </tr>
-//     );
-// };
-
 import Swal from "sweetalert2";
+import css from "./OrderedItems.css";
+// import useOrderedFoodItems from "../../hooks/useOrderedFoodItems";
 
 // export default OrderRow;
 
-const OrderRow = ({ order }) => {
+const OrderRow = ({ order, onRefetch }) => {
+  // const [orders, refetch] = useOrderedFoodItems();
+
   const {
     _id,
     foodImage,
@@ -35,12 +22,23 @@ const OrderRow = ({ order }) => {
     console.log(_id);
     Swal.fire({
       title: "Are you sure?",
+      // background: 'rgb(161 98 7)',
+      background:
+        "#fff url(https://img.freepik.com/free-vector/hazardous-caution-alert-yellow-background-with-blank-space-vector_1017-45749.jpg?size=626&ext=jpg&ga=GA1.1.31107995.1700975448&semt=ais)",
+
       text: "You won't be able to revert this!",
       icon: "warning",
+      width: 620,
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
+
+      customClass: {
+        // confirmButton: 'confirm-button-class',
+        title: "title-class",
+        // icon: 'icon-class',
+      },
     }).then((result) => {
       if (result.isConfirmed) {
         //   Swal.fire({
@@ -58,12 +56,24 @@ const OrderRow = ({ order }) => {
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
+            
             if (data.deletedCount > 0) {
+            
+
               Swal.fire({
                 title: "Deleted!",
+                // background: 'rgb(161 98 7)',
+                background:
+                  "#fff url(https://img.freepik.com/free-photo/flat-lay-red-arrow-cardboard-white-background-with-copy-space_23-2148459972.jpg?size=626&ext=jpg&ga=GA1.1.31107995.1700975448&semt=ais)",
+                width: 550,
                 text: "Your order has been deleted.",
                 icon: "success",
+                customClass: {
+                  text: "text-class",
+                },
               });
+              onRefetch();
+              
             }
           });
       }

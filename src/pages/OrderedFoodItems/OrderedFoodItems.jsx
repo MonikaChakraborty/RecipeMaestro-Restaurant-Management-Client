@@ -2,11 +2,25 @@ import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import OrderRow from "./OrderRow";
 import Navbar from "../Shared/Navbar";
+import useOrderedFoodItems from "../../hooks/useOrderedFoodItems";
 
 const OrderedFoodItems = () => {
   const { user } = useAuth();
+  const [orders, refetch] = useOrderedFoodItems();
 
-  const [orders, setOrders] = useState([]);
+  useEffect(() => {
+    // Refetch data on mount
+    refetch();
+  }, [refetch]);
+
+  const handleRefetch = () => {
+    // Manually trigger refetch
+    refetch();
+  };
+
+
+
+  // const [orders, setOrders] = useState([]);
 
   const url = `https://restaurant-management-system-server-kappa.vercel.app/orders?email=${user?.email}`;
 
@@ -45,7 +59,7 @@ const OrderedFoodItems = () => {
             </thead>
             <tbody>
               {orders.map((order) => (
-                <OrderRow key={order._id} order={order}></OrderRow>
+                <OrderRow key={order._id} order={order} onRefetch={handleRefetch}></OrderRow>
               ))}
             </tbody>
           </table>

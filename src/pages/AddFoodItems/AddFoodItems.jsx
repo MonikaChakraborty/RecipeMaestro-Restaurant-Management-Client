@@ -163,6 +163,7 @@
 import Swal from "sweetalert2";
 import useAuth from "../../hooks/useAuth";
 import Navbar from "../Shared/Navbar";
+import useOrderedFoodItems from "../../hooks/useOrderedFoodItems";
 
 const AddFoodItems = () => {
   const { user } = useAuth();
@@ -218,9 +219,11 @@ const AddFoodItems = () => {
             icon: "success",
             confirmButtonText: "Cool",
           });
+          
         }
         form.reset();
       });
+     
   };
 
   return (

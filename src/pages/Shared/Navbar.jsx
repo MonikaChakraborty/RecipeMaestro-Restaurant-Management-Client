@@ -68,17 +68,7 @@ const Navbar = () => {
         </Link>
       </li>
       }
-{/* <li>
-        <Link  to='errorPage'>
-          <button className="btn -mt-2 -ml-2 border-none">
-            <FaShoppingCart size={20} className="text-white" />
 
-            <div className="badge bg-amber-600 text-white  text-lg py-3 px-3">
-              +{orders.length}
-            </div>
-          </button>
-        </Link>
-      </li> */}
     
 
       {/* <li>

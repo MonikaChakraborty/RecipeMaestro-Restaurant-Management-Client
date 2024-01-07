@@ -3,6 +3,7 @@ import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
 import { useState } from "react";
 import Navbar from "../Shared/Navbar";
+import useOrderedFoodItems from "../../hooks/useOrderedFoodItems";
 
 const FoodPurchase = () => {
   const foodItem = useLoaderData();
@@ -16,6 +17,8 @@ const FoodPurchase = () => {
     foodOrigin,
   } = foodItem;
   const { user } = useAuth();
+  const [, refetch] = useOrderedFoodItems();
+
 
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -77,6 +80,7 @@ const FoodPurchase = () => {
             icon: "success",
             confirmButtonText: "Cool",
           });
+          refetch();
         }
         form.reset();
       });
