@@ -97,13 +97,13 @@ const AllFoodItems = () => {
                   </Link>
                 </div>
 
-                {/* <div>
+                <div>
                   <Link to="/orders">
                     <button className="btn btn-block btn-ghost text-sm lg:text-base  bg-slate-200 normal-case mb-2">
                       My ordered Food Items
                     </button>
                   </Link>
-                </div> */}
+                </div>
 
                 <div>
                   <button

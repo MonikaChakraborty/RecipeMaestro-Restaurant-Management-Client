@@ -55,7 +55,7 @@ const Navbar = () => {
         </NavLink>
       </li>
 
-      {/* {
+      {
         user && <li>
         <Link to="/orders">
           <button className="btn -mt-2 -ml-2 border-none">
@@ -67,18 +67,18 @@ const Navbar = () => {
           </button>
         </Link>
       </li>
-      } */}
-<li>
+      }
+{/* <li>
         <Link  to='errorPage'>
           <button className="btn -mt-2 -ml-2 border-none">
             <FaShoppingCart size={20} className="text-white" />
 
-            {/* <div className="badge bg-amber-600 text-white  text-lg py-3 px-3">
+            <div className="badge bg-amber-600 text-white  text-lg py-3 px-3">
               +{orders.length}
-            </div> */}
+            </div>
           </button>
         </Link>
-      </li>
+      </li> */}
     
 
       {/* <li>
@@ -171,13 +171,13 @@ const Navbar = () => {
                 </Link>
               </div>
 
-              {/* <div>
+              <div>
                 <Link to="/orders">
                   <button className="btn btn-block btn-ghost text-sm lg:text-base bg-slate-200 normal-case mb-2">
                     My ordered Food Items
                   </button>
                 </Link>
-              </div> */}
+              </div>
 
               <li>
                 <button
