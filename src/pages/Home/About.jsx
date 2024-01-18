@@ -6,8 +6,14 @@ import box5 from "../../assets/box-5.jpg";
 import box6 from "../../assets/box6-1.jpg";
 import box7 from "../../assets/box-7.jpg";
 import middleBox from "../../assets/middleBox.jpg";
+import { useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css'
 
 const About = () => {
+  useEffect(() => {
+    AOS.init()
+  }, [])
   return (
     <div className="max-w-screen-xl mx-auto ">
       <div className="flex gap-1 h-[80vh]">
