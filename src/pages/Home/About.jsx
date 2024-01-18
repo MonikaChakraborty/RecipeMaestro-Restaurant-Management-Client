@@ -14,6 +14,7 @@ const About = () => {
   useEffect(() => {
     AOS.init()
   }, [])
+  
   return (
     <div className="max-w-screen-xl mx-auto ">
       <div className="flex gap-1 h-[80vh]">

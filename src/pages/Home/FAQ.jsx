@@ -55,11 +55,11 @@ export default class App extends Component {
           data-aos-easing="ease-out-cubic"
           data-aos-duration="1000">
      {data.title}
-    {/* <div className="lg:hidden flex justify-center -mt-24 -mb-20 mx-auto" data-aos="fade-up-left"
+    <div className="lg:hidden flex justify-center -mt-20 -mb-16 mx-auto" data-aos="fade-up-left"
           data-aos-easing="ease-out-cubic"
           data-aos-duration="1000">
     <Lottie className="w-[300px]" animationData={faq}></Lottie>
-    </div> */}
+    </div>
      <Faq
             data={{ ...data, title: null }}
             
