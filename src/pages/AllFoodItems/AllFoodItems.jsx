@@ -46,19 +46,19 @@ const AllFoodItems = () => {
       <div className="flex flex-row justify-center items-center bg-gradient-to-r from-transparent to-yellow-700 p-8 mb-10">
         <Link to="/">
           {" "}
-          <button className="rounded absolute left-10 p-3 top-16  bg-yellow-900 text-gray-200 hover:bg-yellow-950 font-bold text-lg">
+          <button className="rounded absolute left-3 md:left-10 md:p-3 p-1 top-16 md:top-10  bg-yellow-900 text-gray-200 hover:bg-yellow-950 font-bold text-base md:text-lg">
             Go to Home
           </button>
         </Link>
         <div className="text-center">
-          <h1 className="text-3xl lg:text-5xl font-extrabold  text-yellow-800  text-center ">
+          <h1 className="text-2xl lg:text-5xl font-extrabold  text-yellow-800  text-center ">
             🌮 Discover Culinary Delights 🍜
             <span className="block text-sm lg:text-base text-gray-600 mt-2">
               Explore a world of flavors in our diverse menu
             </span>
           </h1>
         </div>
-        <div className="right-16 absolute ">
+        <div className="md:right-16 right-4 top-14 absolute ">
           {user?.email ? (
             <div className="dropdown dropdown-end">
               <label
@@ -66,8 +66,8 @@ const AllFoodItems = () => {
                 className="btn-circle w-16 h-16 rounded-lg cursor-pointer
                avatar mr-3 "
               >
-                <div className="w-48 rounded-full">
-                  <img src={user.photoURL} alt={user.displayName}  />
+                <div className="  w-12 h-12 lg:h-16 lg:w-48 rounded-full">
+                  <img className="" src={user.photoURL} alt={user.displayName}  />
                 </div>
               </label>
 
@@ -117,7 +117,7 @@ const AllFoodItems = () => {
             </div>
           ) : (
             <Link to="/login">
-              <button className="btn mr-3">Login</button>
+              <button className="md:px-5 md:py-3 px-2 py-1 rounded  bg-yellow-800 -mr-12 md:-mr-5 lg:mb-5 text-gray-200 hover:bg-yellow-950 font-bold text-base md:text-lg">Login</button>
             </Link>
           )}
         </div>
@@ -128,7 +128,7 @@ const AllFoodItems = () => {
         <input
           type="text"
           placeholder="Search by food name..."
-          className="p-2 border border-gray-300 rounded"
+          className="p-2 border border-gray-300 rounded mr-2"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />

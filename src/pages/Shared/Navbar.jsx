@@ -115,8 +115,8 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <img className="w-16 lg:-mr-4 object-cover" src={logo} alt="logo" />
-        <a className="btn btn-ghost normal-case text-gray-200 text-xl">
+        <img className="w-16 -mr-6 lg:-mr-4 object-cover" src={logo} alt="logo" />
+        <a className="btn btn-ghost normal-case text-gray-200 md:text-lg lg:text-xl">
           RecipeMaestro
         </a>
       </div>
@@ -181,7 +181,7 @@ const Navbar = () => {
           </div>
         ) : (
           <Link to="/login">
-            <button className="btn mr-3 text-slate-200">Login</button>
+            <button className="btn ml-3 mr-3 text-slate-200">Login</button>
           </Link>
         )}
       </div>

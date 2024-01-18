@@ -12,8 +12,10 @@ import 'aos/dist/aos.css'
 
 const About = () => {
   useEffect(() => {
-    AOS.init()
-  }, [])
+    setTimeout(() => {
+      AOS.init();
+    }, 1000); // You can adjust the delay (in milliseconds) as needed
+  }, []);
   
   return (
     <div className="max-w-screen-xl mx-auto ">
