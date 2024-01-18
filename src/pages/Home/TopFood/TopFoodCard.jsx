@@ -1,6 +1,12 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css'
 
 const TopFoodCard = ({food}) => {
+  useEffect(() => {
+    AOS.init()
+  }, [])
     const {_id, foodImage, foodName, foodCategory, price} = food;
   return (
     <div className="card bg-base-100 shadow-xl">
